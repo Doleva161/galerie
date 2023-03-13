@@ -14,6 +14,7 @@ body {
 
 img {
   display: block;
+  width: 100%;
 }
 
 /*
@@ -22,9 +23,44 @@ Zařiď, aby se fotogalerie měnila tak, že pro různé
 obrázků vedle sebe. Viz. obrázek zadani-ukolu.jpg.
 
 Okno prohlížeče:
-výchozí (=mobil) - 1 obrázek na řádku (tj. 12 obrázků pod sebou)
-širší než 500px  - 2 obrázky vedle sebe
+výchozí (=mobil) - 1 obrázek na řádku (tj. 12 obrázků pod sebou)*/
+.galerie {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+
+
+}
+/*širší než 500px  - 2 obrázky vedle sebe*/
+@media (min-width: 500px){
+  .galerie {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+  }
+}
+/*
 širší než 650px  - 3 obrázky vedle sebe
-širší než 800px  - 4 obrázky vedle sebe
-širší než 1000px - 6 obrázků vedle sebe
 */
+@media (min-width: 650px){
+  .galerie {
+    grid-template-columns: 33.33% 33.33% auto;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+/*širší než 800px  - 4 obrázky vedle sebe*/
+
+@media (min-width: 800px){
+  .galerie {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+/*širší než 1000px - 6 obrázků vedle sebe
+*/
+@media (min-width: 1000px){
+  .galerie {
+    grid-template-columns: 16.67% 16.67% 16.67% 16.67% 16.67% auto;
+    grid-template-rows: auto auto auto auto auto auto;
+  }
+}
